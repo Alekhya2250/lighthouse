@@ -6,9 +6,9 @@
 'use strict';
 
 const makeComputedArtifact = require('./computed-artifact.js');
-const TraceOfTab = require('../lib/tracium/trace-of-tab.js');
+const TraceOfTab_ = require('../lib/tracium/trace-of-tab.js');
 
-class TraceOfTabComputed {
+class TraceOfTab {
   /**
    * Finds key trace events, identifies main process/thread, and returns timings of trace events
    * in milliseconds since navigation start in addition to the standard microsecond monotonic timestamps.
@@ -16,8 +16,8 @@ class TraceOfTabComputed {
    * @return {Promise<LH.Artifacts.TraceOfTab>}
   */
   static async compute_(trace) {
-    return TraceOfTab.compute(trace);
+    return TraceOfTab_.compute(trace);
   }
 }
 
-module.exports = makeComputedArtifact(TraceOfTabComputed);
+module.exports = makeComputedArtifact(TraceOfTab);

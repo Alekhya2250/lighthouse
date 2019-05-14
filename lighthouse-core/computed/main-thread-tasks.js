@@ -6,10 +6,10 @@
 'use strict';
 
 const makeComputedArtifact = require('./computed-artifact.js');
-const MainThreadTasks = require('../lib/tracium/main-thread-tasks.js');
+const MainThreadTasks_ = require('../lib/tracium/main-thread-tasks.js');
 const TraceOfTab = require('./trace-of-tab.js');
 
-class MainThreadTasksComputed {
+class MainThreadTasks {
   /**
    * @param {LH.Trace} trace
    * @param {LH.Audit.Context} context
@@ -17,8 +17,8 @@ class MainThreadTasksComputed {
    */
   static async compute_(trace, context) {
     const {mainThreadEvents, timestamps} = await TraceOfTab.request(trace, context);
-    return MainThreadTasks.getMainThreadTasks(mainThreadEvents, timestamps.traceEnd);
+    return MainThreadTasks_.getMainThreadTasks(mainThreadEvents, timestamps.traceEnd);
   }
 }
 
-module.exports = makeComputedArtifact(MainThreadTasksComputed);
+module.exports = makeComputedArtifact(MainThreadTasks);
