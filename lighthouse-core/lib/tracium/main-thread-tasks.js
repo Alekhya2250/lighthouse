@@ -24,7 +24,7 @@ const {taskGroups, taskNameToGroup} = require('./task-groups.js');
  * attributableURL for the script that was executing/forced this execution.
  */
 
-/** @typedef {import('../lib/task-groups.js').TaskGroup} TaskGroup */
+/** @typedef {import('./task-groups.js').TaskGroup} TaskGroup */
 
 /**
  * @typedef TaskNode
