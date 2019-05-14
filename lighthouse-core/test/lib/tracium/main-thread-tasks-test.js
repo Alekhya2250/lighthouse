@@ -10,7 +10,7 @@
 const MainThreadTasks = require('../../computed/main-thread-tasks.js');
 const taskGroups = require('../../lib/task-groups.js').taskGroups;
 const pwaTrace = require('../fixtures/traces/progressive-app.json');
-const TracingProcessor = require('../../lib/traces/tracing-processor.js');
+const TracingProcessor = require('../../lib/tracium/tracing-processor.js');
 const assert = require('assert');
 
 describe('MainResource computed artifact', () => {

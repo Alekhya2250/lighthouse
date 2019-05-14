@@ -11,7 +11,7 @@
 'use strict';
 
 const Audit = require('./audit');
-const {taskGroups} = require('../lib/task-groups');
+const {taskGroups} = require('../lib/tracium/task-groups');
 const i18n = require('../lib/i18n/i18n.js');
 const MainThreadTasks = require('../computed/main-thread-tasks.js');
 
@@ -29,7 +29,7 @@ const UIStrings = {
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
-/** @typedef {import('../lib/task-groups.js').TaskGroupIds} TaskGroupIds */
+/** @typedef {import('../lib/tracium/task-groups.js').TaskGroupIds} TaskGroupIds */
 
 class MainThreadWorkBreakdown extends Audit {
   /**

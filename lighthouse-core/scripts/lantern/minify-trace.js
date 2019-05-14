@@ -11,14 +11,14 @@
 /**
  * @fileoverview Minifies a trace by removing unnecessary events, throttling screenshots, etc.
  *  See the following files for necessary events:
- *    - lighthouse-core/computed/trace-of-tab.js
+ *    - lighthouse-core/lib/tracium/trace-of-tab.js
+ *    - lighthouse-core/lib/tracium/tracing-processor.js
  *    - lighthouse-core/computed/page-dependency-graph.js
- *    - lighthouse-core/lib/traces/tracing-processor.js
  */
 
 const fs = require('fs');
 const path = require('path');
-const TracingProcessor = require('../../lib/traces/tracing-processor');
+const TracingProcessor = require('../../lib/tracium/tracing-processor');
 
 if (process.argv.length !== 4) {
   console.error('Usage $0: <input file> <output file>');
