@@ -8,11 +8,11 @@
 const assert = require('assert');
 
 /* eslint-env jest */
-const TracingProcessor = require('../../../lib/tracium/tracing-processor');
+const TracingProcessor = require('../../../lib/tracium/tracing-processor.js');
 const pwaTrace = require('../../fixtures/traces/progressive-app.json');
 const defaultPercentiles = [0, 0.25, 0.5, 0.75, 0.9, 0.99, 1];
 
-const TraceOfTab = require('../../../computed/trace-of-tab.js');
+const TraceOfTab = require('../../../lib/tracium/trace-of-tab.js');
 
 /**
  * Create a riskPercentiles result object by matching the values in percentiles
@@ -147,9 +147,9 @@ describe('TracingProcessor lib', () => {
   });
 
   describe('getMainThreadTopLevelEvents', () => {
-    it('gets durations of top-level tasks', async () => {
+    it('gets durations of top-level tasks', () => {
       const trace = {traceEvents: pwaTrace};
-      const tabTrace = await TraceOfTab.compute_(trace);
+      const tabTrace = TraceOfTab.compute(trace);
       const ret = TracingProcessor.getMainThreadTopLevelEvents(tabTrace);
 
       assert.equal(ret.length, 645);
